@@ -1,0 +1,24 @@
+{
+  "contatos": [
+    {
+      "nome": "pedro",
+      "email": "pedro@gmail.com",
+      "id": "fc82"
+    },
+    {
+      "id": "1cec",
+      "nome": "hugo",
+      "email": "hugo@gmail.com"
+    },
+    {
+      "id": "e44b",
+      "nome": "gerson",
+      "email": "gerson@gmail.com"
+    },
+    {
+      "id": "2ccc",
+      "nome": "thiago",
+      "email": "thiago@gmail.com"
+    }
+  ]
+}
