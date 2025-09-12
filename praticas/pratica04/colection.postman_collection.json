@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "84de92d7-3df6-4331-8c58-73805dc6395a",
+		"name": "colection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48187791",
+		"_collection_link": "https://thiago-santos2-4570532.postman.co/workspace/36f8b5b5-8aeb-44bb-8d0f-93aa52c49edc/collection/48187791-84de92d7-3df6-4331-8c58-73805dc6395a?action=share&source=collection_link&creator=48187791"
+	},
+	"item": [
+		{
+			"name": "New request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tarefas/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tarefas/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"nome\": \"Nova Tarefa\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tarefas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"nome\": \"Atualizada\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tarefas/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
