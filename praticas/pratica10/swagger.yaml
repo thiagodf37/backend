@@ -1,0 +1,222 @@
+openapi: 3.0.0
+info:
+  title: API Prática 10
+  version: 1.0.0
+  description: Documentação da API desenvolvida na Prática 10.
+
+servers:
+  - url: http://localhost:3000
+    description: Servidor local
+
+paths:
+
+  /usuarios:
+    get:
+      summary: Lista todos os usuários
+      tags:
+        - Usuarios
+      responses:
+        '200':
+          description: Lista retornada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mensagem'
+
+    post:
+      summary: Cria um novo usuário
+      tags:
+        - Usuarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Usuario'
+      responses:
+        '201':
+          description: Usuário criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mensagem'
+
+  /usuarios/{id}:
+    get:
+      summary: Busca um usuário pelo ID
+      tags:
+        - Usuarios
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Usuário encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+        '404':
+          description: Usuário não encontrado
+
+    put:
+      summary: Atualiza um usuário
+      tags:
+        - Usuarios
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Usuario'
+      responses:
+        '200':
+          description: Usuário atualizado com sucesso
+
+    delete:
+      summary: Remove um usuário
+      tags:
+        - Usuarios
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Usuário removido com sucesso
+
+
+  /produtos:
+    get:
+      summary: Lista todos os produtos
+      tags:
+        - Produtos
+      responses:
+        '200':
+          description: Lista retornada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mensagem'
+
+    post:
+      summary: Cria um produto
+      tags:
+        - Produtos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Produto'
+      responses:
+        '201':
+          description: Produto criado com sucesso
+
+
+  /produtos/{id}:
+    get:
+      summary: Busca produto por ID
+      tags:
+        - Produtos
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Produto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+        '404':
+          description: Produto não encontrado
+
+    put:
+      summary: Atualiza produto
+      tags:
+        - Produtos
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Produto'
+      responses:
+        '200':
+          description: Produto atualizado
+
+    delete:
+      summary: Deleta produto
+      tags:
+        - Produtos
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Produto excluído
+
+
+components:
+
+  schemas:
+
+    Usuario:
+      type: object
+      properties:
+        id:
+          type: integer
+        nome:
+          type: string
+        email:
+          type: string
+      example:
+        id: 1
+        nome: João da Silva
+        email: joao@email.com
+
+    Produto:
+      type: object
+      properties:
+        id:
+          type: integer
+        nome:
+          type: string
+        preco:
+          type: number
+      example:
+        id: 1
+        nome: Bola
+        preco: 19.90
+
+    Mensagem:
+      type: object
+      properties:
+        mensagem:
+          type: string
+      example:
+        mensagem: Operação realizada com sucesso
